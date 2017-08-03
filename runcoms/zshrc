@@ -11,3 +11,38 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+#
+
+source "${HOME}/.secrets"
+
+# Prevent prompt becoming env var. e.g. $RVM_PROJECT_PATH 
+unsetopt AUTO_NAME_DIRS
+
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$HOME/bin:$PATH
+
+export EDITOR='vim'
+
+export DEFAULT_USER=`whoami`
+
+alias ssh='TERM=xterm-256color ssh'
+
+alias ls='/usr/local/bin/gls -GF'
+alias ll='ls -olh --group-directories-first --color=auto'
+alias la='ll -a'
+
+alias t='tmux new -s main'
+
+alias grep='grep --color=auto'
+
+unalias rm
+
+function git(){hub "$@"}
+alias st='git st'
+
+export ARCHFLAGS="-arch x86_64"
+
+alias v='vim'
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
