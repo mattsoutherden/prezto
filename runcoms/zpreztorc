@@ -32,6 +32,11 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'completion' \
+  'git' \
+  'syntax-highlighting' \
+  'autosuggestions' \
+  'homebrew' \
+  'tmux' \
   'prompt'
 
 #
